@@ -7,7 +7,7 @@ function App() {
       <ChatEngine
         height="100vh"
         projectID="0c033c07-4731-40fc-bef6-b961ecd3376f"
-        userName="odhiambo.edward111@gmail.com"
+        userName="odhiambo-ed"
         password="12900001"
       />
     </div>
