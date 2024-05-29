@@ -8,7 +8,7 @@ function App() {
         height="100vh"
         projectID="0c033c07-4731-40fc-bef6-b961ecd3376f"
         userName="odhiambo-ed"
-        password="12900001"
+        userSecret="12900001"
       />
     </div>
   );
