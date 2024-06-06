@@ -10,7 +10,8 @@ function App() {
         projectID="0c033c07-4731-40fc-bef6-b961ecd3376f"
         userName="odhiambo-ed"
         userSecret="12900001"
-        renderChatFeed={(chatAppProps) => <ChatFeed />}
+        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+        onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
       />
     </div>
   );
