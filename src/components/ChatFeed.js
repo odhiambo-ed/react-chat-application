@@ -1,9 +1,10 @@
 import React from 'react'
 
 const ChatFeed = (props) => {
+  console.log(props);
   return (
       <div>
-          console.log(props);
+          Chat Feed
     </div>
   )
 }
