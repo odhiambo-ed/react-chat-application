@@ -1,8 +1,10 @@
 import React from 'react'
 
-const ChatFeed = () => {
+const ChatFeed = (props) => {
   return (
-    <div>ChatFeed</div>
+      <div>
+          console.log(props);
+    </div>
   )
 }
 
