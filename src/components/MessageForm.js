@@ -14,6 +14,10 @@ function MessageForm({ props }) {
         if (text.length > 0) sendMessage(creds, chatId, { text });
         setValue('');
     };
+
+    const handleUpload = (event) => { 
+        sendMessage(creds, chatId, { files: event.target.files, text: '' });
+    };
     return (
         <form className="message-form" onSubmit={hasFormSubmit}>
             <input
