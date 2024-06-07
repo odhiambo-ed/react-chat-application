@@ -46,7 +46,8 @@ function Login() {
             <div className="field">
               <button className="button" onSubmit={handleSubmit}>
                 <span>Start chatting</span>
-              </button>
+                      </button>
+                      <h2 className="error">{error}</h2>
             </div>
           </form>
         </div>
