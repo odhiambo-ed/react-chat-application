@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { sendMessage, isTyping } from 'react-chat-engine'
 import { SendOutlined, PictureOutlined } from '@ant-design/icons'
-import { hasFormSubmit } from '@testing-library/user-event/dist/utils';
 
 
 function MessageForm({ props }) {
@@ -22,19 +21,14 @@ function MessageForm({ props }) {
     const handleUpload = (event) => { 
         sendMessage(creds, chatId, { files: event.target.files, text: '' });
     };
-
-    const hasFormSubmit = (event) => { 
-        event.preventDefault();
-        handleSendMessage();
-    };
     return (
-        <form className="message-form" onSubmit={hasFormSubmit}>
+        <form className="message-form" onSubmit={handleSendMessage}>
             <input
                 className="message-input"
                 placeholder="Send a message..."
                 value={value}
                 onChange={handleChange}
-                onSubmit={hasFormSubmit}
+                onSubmit={handleSendMessage}
             />
             <label htmlFor="upload-button">
                 <span className="image-button">
