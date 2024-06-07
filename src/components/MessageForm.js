@@ -18,6 +18,11 @@ function MessageForm({ props }) {
     const handleUpload = (event) => { 
         sendMessage(creds, chatId, { files: event.target.files, text: '' });
     };
+
+    const hasFormSubmit = (event) => { 
+        event.preventDefault();
+        handleSendMessage();
+    };
     return (
         <form className="message-form" onSubmit={hasFormSubmit}>
             <input
