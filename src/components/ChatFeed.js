@@ -32,9 +32,31 @@ const ChatFeed = (props) => {
               marginRight: isMyMessage ? '18px' : '0px',
               marginLeft: isMyMessage ? '0px' : '68px'
             }}
-          ></div>
+          >
+            {renderReadReceipts(message, isMyMessage)}
+          </div>
         </div>
       );
+    });
+  }
+
+  const renderReadReceipts = (message, isMyMessage) => 
+  {
+    chat.people.map((person, index) => 
+    {
+      if (person.last_read === message.id) 
+      {
+        return (
+          <div
+            key={`read_${index}`}
+            className="read-receipt"
+            style={{
+              float: isMyMessage ? 'right' : 'left',
+              backgroundImage: person.person.avatar && `url(${person.person.avatar})`
+            }}
+          />
+        );
+      }
     });
   }
   return (
