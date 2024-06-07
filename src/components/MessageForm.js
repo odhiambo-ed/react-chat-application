@@ -8,6 +8,10 @@ function MessageForm({ props }) {
     const [value, setValue] = useState('');
     const { chatId, creds } = props;
 
+    const handleChange = (event) => { 
+        setValue(event.target.value);
+        isTyping(props, chatId);
+    };
     const handleSendMessage = (event) => { 
         event.preventDefault();
         const text = value.trim();
@@ -29,7 +33,7 @@ function MessageForm({ props }) {
                 className="message-input"
                 placeholder="Send a message..."
                 value={value}
-                onChange={(event) => setValue(event.target.value)}
+                onChange={handleChange}
                 onSubmit={hasFormSubmit}
             />
             <label htmlFor="upload-button">
